@@ -2,7 +2,7 @@
 function checkAuth() {
     const token = localStorage.getItem("token");
     if (!token) {
-        window.location.href = "index.html";
+        window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
         return false;
     }
     return true;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!token) return;
     
         try {
-            const response = await fetch("https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/user/submissions", {
+            const response = await fetch("https://task-management-be-tau.vercel.app/api/user/submissions", {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!token) return alert("Unauthorized. Please log in.");
 
         try {
-            const response = await fetch("https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/user/tasks", {
+            const response = await fetch("https://task-management-be-tau.vercel.app/api/user/tasks", {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         try {
             const xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/user/submitTask");
+            xhr.open("POST", "https://task-management-be-tau.vercel.app/api/user/submitTask");
             xhr.setRequestHeader("Authorization", `Bearer ${token}`);
 
             // Track upload progress
