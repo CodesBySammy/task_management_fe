@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", initializeAdminPanel);
 function checkAuth() {
     const token = localStorage.getItem("token");
     if (!token) {
-        window.location.href = "index.html";
+        window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
         return false;
     }
 
@@ -102,7 +102,7 @@ function createUser() {
         return;
     }
 
-    fetch('https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/addUser', {
+    fetch('https://task-management-be-tau.vercel.app/api/admin/addUser', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ function createTask() {
         return;
     }
 
-    fetch('https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/createTask', {
+    fetch('https://task-management-be-tau.vercel.app/api/admin/createTask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ function loadSubmissions() {
     const submissionsList = document.getElementById("submissionsList");
     submissionsList.innerHTML = '<p>Loading submissions...</p>';
 
-    fetch("https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/submissions", {
+    fetch("https://task-management-be-tau.vercel.app/api/admin/submissions", {
         headers: { 
             "Authorization": `Bearer ${token}`,
             "Accept": "application/json"
@@ -223,7 +223,7 @@ function reviewSubmission(id, status) {
     if (!checkAuth()) return;
     const token = localStorage.getItem("token");
 
-    fetch("https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/reviewSubmission", {
+    fetch("https://task-management-be-tau.vercel.app/api/admin/reviewSubmission", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
