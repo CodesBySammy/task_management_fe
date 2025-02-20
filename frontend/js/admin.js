@@ -102,7 +102,7 @@ function createUser() {
         return;
     }
 
-    fetch('http://localhost:5000/api/admin/addUser', {
+    fetch('https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/addUser', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ function createTask() {
         return;
     }
 
-    fetch('http://localhost:5000/api/admin/createTask', {
+    fetch('https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/createTask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ function loadSubmissions() {
     const submissionsList = document.getElementById("submissionsList");
     submissionsList.innerHTML = '<p>Loading submissions...</p>';
 
-    fetch("http://localhost:5000/api/admin/submissions", {
+    fetch("https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/submissions", {
         headers: { 
             "Authorization": `Bearer ${token}`,
             "Accept": "application/json"
@@ -223,7 +223,7 @@ function reviewSubmission(id, status) {
     if (!checkAuth()) return;
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/admin/reviewSubmission", {
+    fetch("https://task-management-aafvjpgh8-sameer-mahindrus-projects.vercel.app/api/admin/reviewSubmission", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
