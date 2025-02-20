@@ -13,13 +13,13 @@ function checkAuth() {
         if (payload.role !== 'admin') {
             alert('Unauthorized access');
             localStorage.clear();
-            window.location.href = "index.html";
+            window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
             return false;
         }
     } catch (error) {
         console.error('Token validation error:', error);
         localStorage.clear();
-        window.location.href = "index.html";
+        window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
         return false;
     }
 
@@ -41,7 +41,7 @@ function initializeAdminPanel() {
 function logout() {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = "index.html";
+    window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
 }
 
 // Security Measures
