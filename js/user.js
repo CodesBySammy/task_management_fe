@@ -2,7 +2,7 @@
 function checkAuth() {
     const token = localStorage.getItem("token");
     if (!token) {
-        window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
+        window.location.href = "https://task-management-livid-seven.vercel.app/index.html";
         return false;
     }
     return true;
