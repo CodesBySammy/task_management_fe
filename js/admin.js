@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", initializeAdminPanel);
 function checkAuth() {
     const token = localStorage.getItem("token");
     if (!token) {
-        window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
+        window.location.href = "https://task-management-livid-seven.vercel.app/index.html";
         return false;
     }
 
@@ -13,13 +13,13 @@ function checkAuth() {
         if (payload.role !== 'admin') {
             alert('Unauthorized access');
             localStorage.clear();
-            window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
+            window.location.href = "https://task-management-livid-seven.vercel.app/index.html";
             return false;
         }
     } catch (error) {
         console.error('Token validation error:', error);
         localStorage.clear();
-        window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
+        window.location.href = "https://task-management-livid-seven.vercel.app/index.html";
         return false;
     }
 
@@ -41,7 +41,7 @@ function initializeAdminPanel() {
 function logout() {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = "https://task-management-livid-seven.vercel.app/frontend/index.html";
+    window.location.href = "https://task-management-livid-seven.vercel.app/index.html";
 }
 
 // Security Measures
@@ -238,7 +238,7 @@ function reviewSubmission(id, status) {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/frontend/public/service-worker.js')
+        navigator.serviceWorker.register('./public/service-worker.js')
             .then(reg => console.log("Service Worker Registered", reg))
             .catch(err => console.log("Service Worker Registration Failed", err));
     });
