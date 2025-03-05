@@ -235,3 +235,11 @@ function reviewSubmission(id, status) {
     .then(() => loadSubmissions())
     .catch(error => console.error("Error reviewing submission:", error));
 }
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log("Service Worker Registered", reg))
+            .catch(err => console.log("Service Worker Registration Failed", err));
+    });
+}
