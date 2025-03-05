@@ -1,7 +1,14 @@
 {
-  "routes": [
-    { "src": "/service-worker.js", "dest": "/frontend/public/service-worker.js" },
-    { "src": "/manifest.json", "dest": "/frontend/public/manifest.json" },
-    { "src": "/", "dest": "/frontend/index.html" }
-  ]
+  "rewrites": [
+    { "source": "/", "destination": "/frontend/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/service-worker.js",
+      "headers": [{ "key": "Content-Type", "value": "text/javascript" }]
+    }
+  ],
+  "staticFiles": {
+    "public": "/frontend/public"
+  }
 }
