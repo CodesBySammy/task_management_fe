@@ -238,8 +238,9 @@ function reviewSubmission(id, status) {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/frontend/service-worker.js')
             .then(reg => console.log("Service Worker Registered", reg))
             .catch(err => console.log("Service Worker Registration Failed", err));
     });
 }
+
