@@ -9,7 +9,8 @@ const urlsToCache = [
   '/css/user.css',
   '/js/admin.js',
   '/js/auth.js',
-  '/js/user.js'
+  '/js/user.js',
+  '/js/install-prompt.js'
 ];
 
 self.addEventListener('install', (event) => {
