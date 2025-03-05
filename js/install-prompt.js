@@ -1,4 +1,3 @@
-// Add this to a new file called install-prompt.js
 let deferredPrompt;
 const installButton = document.createElement('button');
 installButton.style.position = 'fixed';
@@ -6,6 +5,12 @@ installButton.style.bottom = '20px';
 installButton.style.left = '50%';
 installButton.style.transform = 'translateX(-50%)';
 installButton.style.zIndex = '1000';
+installButton.style.padding = '10px 20px';
+installButton.style.backgroundColor = '#007bff';
+installButton.style.color = 'white';
+installButton.style.border = 'none';
+installButton.style.borderRadius = '5px';
+installButton.style.cursor = 'pointer';
 installButton.textContent = 'Install App';
 installButton.style.display = 'none';
 
