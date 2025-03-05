@@ -14,7 +14,7 @@ function preventBack() {
 }
 
 setTimeout(preventBack, 0);
-window.addEventListener("unload", function () { null });
+window.addEventListener("beforeunload", function () { null });
 
 document.addEventListener("DOMContentLoaded", async () => {
     if (!checkAuth()) return;
