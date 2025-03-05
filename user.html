@@ -6,6 +6,12 @@
     <title>User Dashboard</title>
     <script defer src="./js/user.js"></script>
     <link rel="stylesheet" href="./css/user.css">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- iOS Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
 </head>
 <body>
     <div class="header">
@@ -60,5 +66,20 @@
         <h3>Your Recent Submissions</h3>
         <div id="submissionsList"></div>
     </div>
+
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
