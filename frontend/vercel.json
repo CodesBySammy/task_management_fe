@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/service-worker.js", "dest": "/frontend/public/service-worker.js" },
+    { "src": "/manifest.json", "dest": "/frontend/public/manifest.json" },
+    { "src": "/", "dest": "/frontend/index.html" }
+  ]
+}
