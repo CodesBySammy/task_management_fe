@@ -1,9 +1,40 @@
 {
+  "version": 2,
+  "public": true,
   "routes": [
-    { "src": "/service-worker.js", "dest": "/public/service-worker.js" },
-    { "src": "/manifest.json", "dest": "/public/manifest.json" },
-    { "src": "/icons/(.*)", "dest": "/public/icons/$1" },
     { "src": "/", "dest": "/index.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/admin", "dest": "/admin.html" },
+    { "src": "/user", "dest": "/user.html" },
+    { "src": "/login", "dest": "/login.html" },
+    { "src": "/manifest.json", "dest": "/public/manifest.json" },
+    { "src": "/service-worker.js", "dest": "/public/service-worker.js" }
+  ],
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "public/**", "use": "@vercel/static" },
+    { "src": "*.css", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/static" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'" }
+      ]
+    },
+    {
+      "source": "/service-worker.js",
+      "headers": [
+        { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    },
+    {
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    }
   ]
 }
