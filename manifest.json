@@ -1,11 +1,11 @@
 {
-  "name": "Your Web Application",
-  "short_name": "WebApp",
+  "name": "Tasklyf",
+  "short_name": "Tasklyf",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "description": "Your web application description",
+  "description": "Making life easier with task management",
   "orientation": "any",
   "icons": [
     {
